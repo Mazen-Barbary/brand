@@ -1,0 +1,382 @@
+:root {
+    --hector-black: #000000;
+    --hector-white: #ffffff;
+    --hector-gray: #f8f9fa;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--hector-white);
+    color: var(--hector-black);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    background-color: var(--hector-black);
+    color: var(--hector-white);
+    overflow: hidden;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+.announcement-bar__inner {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+}
+
+.announcement-bar__inner span {
+    display: inline-block;
+    padding-right: 60px;
+}
+
+@keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* Navigation */
+header {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.nav-link {
+    color: var(--hector-black);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    color: var(--hector-black);
+}
+
+/* Hero Carousel */
+#heroCarousel .carousel-item {
+    height: 90vh;
+    background-color: #eee;
+}
+
+#heroCarousel img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Product Sections Layout */
+.section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 50px 0 20px;
+    padding-left: 15px;
+}
+
+main.container {
+    max-width: 1140px;
+}
+
+/* Product Grid: shows up to 5 cards at a time, horizontal scroll for the rest */
+.product-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 12px;
+}
+
+.product-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+/* If there are 4 or fewer items, disable scrollbar styling and overflow */
+.product-grid.no-scroll {
+    overflow-x: visible;
+}
+
+.product-grid.no-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card-wrap {
+    flex: 0 0 calc((100% - 4 * 16px) / 5);
+    max-width: calc((100% - 4 * 16px) / 5);
+    scroll-snap-align: start;
+    min-width: 0;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-radius: 0;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 0.5rem 0;
+}
+
+.card-title {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.price {
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+}
+
+.buy-btn {
+    border-radius: 0;
+    padding: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-size: 9px;
+}
+
+/* Video Banner */
+.video-banner {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+    margin-top: 80px;
+}
+
+.video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background-color: var(--hector-gray);
+    border-top: 1px solid #eee;
+    padding: 80px 0 40px;
+}
+
+footer h5 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+footer .nav-link {
+    padding: 0;
+    margin-bottom: 10px;
+    color: #666 !important;
+    text-transform: none;
+    font-weight: 400;
+}
+
+/* ============ RESPONSIVE STYLES ============ */
+
+/* Tablets and below */
+@media (max-width: 991.98px) {
+    header {
+        top: 40px;
+        background: var(--hector-white);
+        padding-bottom: 4px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #mobileNav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--hector-white);
+        margin-top: 10px;
+        order: 3;
+    }
+.col{
+    width: 200px;
+}
+    #mobileNav.show {
+        display: flex;
+    }
+
+    #mobileNav .nav-link {
+        padding: 10px 0;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    #heroCarousel .carousel-item {
+        height: 70vh;
+    }
+
+    .video-banner {
+        height: 50vh;
+    }
+
+    .product-card-wrap {
+        flex: 0 0 calc(33.333% - 11px);
+        max-width: calc(33.333% - 11px);
+    }
+}
+
+/* Phones & Smaller Screens */
+@media (max-width: 767.98px) {
+    .announcement-bar {
+        font-size: 11px;
+        letter-spacing: 1px;
+        padding: 9px 0;
+    }
+
+    .announcement-bar__inner span {
+        padding-right: 36px;
+    }
+
+    header {
+        top: 20px;
+    }
+
+    #heroCarousel .carousel-item {
+        height: 50vh;
+    }
+
+    .section-title {
+        margin: 30px 0 15px;
+        padding-left: 0;
+        font-size: 22px;
+    }
+
+    .product-card-wrap {
+        flex: 0 0 38%;
+        max-width: 38%;
+    }
+.col{
+    width: 200px;
+}
+    .card-title {
+        font-size: 9.5px;
+    }
+
+    .price {
+        font-size: 9.5px;
+    }
+
+    .buy-btn {
+        font-size: 8px;
+        padding: 4px;
+    }
+
+    .video-banner {
+        height: 35vh;
+        margin-top: 40px;
+    }
+
+    footer {
+        padding: 40px 0 20px;
+        text-align: center;
+    }
+
+    footer .col-md-4,
+    footer .col-md-2 {
+        margin-bottom: 15px;
+    }
+
+    footer .nav-link {
+        text-align: center;
+    }
+
+    footer .d-flex.gap-2 {
+        width: 100%;
+    }
+}
+
+/* Extra small phones (iPhone SE and similar) */
+@media (max-width: 380px) {
+    header {
+        top: 32px;
+    }
+
+    .section-title {
+        font-size: 19px;
+    }
+
+    #heroCarousel .carousel-item {
+        height: 45vh;
+    }
+
+    .col{
+    width: 200px;
+}
+
+    .card-title {
+        font-size: 9px;
+    }
+
+    .price {
+        font-size: 9px;
+    }
+}
+
+.error-text {
+    color: #ba1a1a; /* matches your Tailwind error color */
+    font-size: 12px;
+    margin-top: 4px;
+    display: none; /* Hidden by default */
+}
+.error-text.visible {
+    display: block; /* Shown when error occurs */
+}
+
+header .fs-4,
+header .nav-link,
+header svg {
+    color: white;
+    mix-blend-mode: difference;
+}
+
+header svg {
+    stroke: white;
+}

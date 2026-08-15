@@ -219,9 +219,8 @@ footer .nav-link {
 @media (max-width: 991.98px) {
     header {
         top: 40px;
-        background: var(--hector-white);
         padding-bottom: 4px;
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+        /* transparent, inherits from base header rule so the hero shows through */
     }
 
     .menu-toggle {
@@ -235,10 +234,9 @@ footer .nav-link {
         background: var(--hector-white);
         margin-top: 0px;
         order: 3;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-.col{
-    width: 200px;
-}
+
     #mobileNav.show {
         display: flex;
     }
@@ -293,9 +291,7 @@ footer .nav-link {
         flex: 0 0 38%;
         max-width: 38%;
     }
-.col{
-    width: 200px;
-}
+
     .card-title {
         font-size: 9.5px;
     }
@@ -346,10 +342,6 @@ footer .nav-link {
     #heroCarousel .carousel-item {
         height: 45vh;
     }
-
-    .col{
-    width: 200px;
-}
 
     .card-title {
         font-size: 9px;

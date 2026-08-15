@@ -233,7 +233,7 @@ footer .nav-link {
         flex-direction: column;
         width: 100%;
         background: var(--hector-white);
-        margin-top: 10px;
+        margin-top: 0px;
         order: 3;
     }
 .col{
@@ -268,7 +268,7 @@ footer .nav-link {
     .announcement-bar {
         font-size: 11px;
         letter-spacing: 1px;
-        padding: 9px 0;
+        padding: 4px 0;
     }
 
     .announcement-bar__inner span {
@@ -276,11 +276,11 @@ footer .nav-link {
     }
 
     header {
-        top: 20px;
+        top: 5px;
     }
 
     #heroCarousel .carousel-item {
-        height: 50vh;
+        height: 60vh;
     }
 
     .section-title {
